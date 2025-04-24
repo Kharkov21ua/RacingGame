@@ -40,12 +40,15 @@
             this.labelloos = new System.Windows.Forms.Label();
             this.btmRestart = new System.Windows.Forms.Button();
             this.btmclose = new System.Windows.Forms.Button();
+            this.coin = new System.Windows.Forms.PictureBox();
+            this.labelCoins = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bg1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bg2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bg3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemy1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemy2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coin)).BeginInit();
             this.SuspendLayout();
             // 
             // bg1
@@ -154,12 +157,36 @@
             this.btmclose.UseVisualStyleBackColor = false;
             this.btmclose.Click += new System.EventHandler(this.btmclose_Click);
             // 
+            // coin
+            // 
+            this.coin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.coin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.coin.Image = ((System.Drawing.Image)(resources.GetObject("coin.Image")));
+            this.coin.Location = new System.Drawing.Point(295, -600);
+            this.coin.Name = "coin";
+            this.coin.Size = new System.Drawing.Size(39, 40);
+            this.coin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.coin.TabIndex = 9;
+            this.coin.TabStop = false;
+            // 
+            // labelCoins
+            // 
+            this.labelCoins.BackColor = System.Drawing.Color.Lime;
+            this.labelCoins.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCoins.Location = new System.Drawing.Point(12, 9);
+            this.labelCoins.Name = "labelCoins";
+            this.labelCoins.Size = new System.Drawing.Size(130, 38);
+            this.labelCoins.TabIndex = 10;
+            this.labelCoins.Text = "Coin: 0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(840, 650);
+            this.Controls.Add(this.labelCoins);
+            this.Controls.Add(this.coin);
             this.Controls.Add(this.btmclose);
             this.Controls.Add(this.btmRestart);
             this.Controls.Add(this.labelloos);
@@ -181,6 +208,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bg3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemy1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemy2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,6 +226,8 @@
         private System.Windows.Forms.Label labelloos;
         private System.Windows.Forms.Button btmRestart;
         private System.Windows.Forms.Button btmclose;
+        private System.Windows.Forms.PictureBox coin;
+        private System.Windows.Forms.Label labelCoins;
     }
 }
 

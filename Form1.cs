@@ -14,6 +14,7 @@ namespace RacingGame
     {
         private Point pos;
         private bool dragging, loose = false;
+        private int countCoins = 0;
         public Form1()
         {
             InitializeComponent();
@@ -68,10 +69,19 @@ namespace RacingGame
             enemy1.Top += carSpeed;
             enemy2.Top += carSpeed;
 
+            coin.Top += speed;
+
             if (bg2.Top >+ 650)
             {
                 bg2.Top = 0;
                 bg3.Top = -650;
+            }
+
+            if (coin.Top >= 650)
+            {
+                coin.Top = -50;
+                Random rand = new Random();
+                coin.Left = rand.Next(150, 560);
             }
 
             if (enemy1.Top >= 650)
@@ -95,6 +105,14 @@ namespace RacingGame
                 btmclose.Visible = true;
                 loose = true;
                 }
+
+            if (player.Bounds.IntersectsWith(coin.Bounds))
+            {
+                countCoins++;
+                labelCoins.Text = "Coins: " + countCoins.ToString();
+                Random rand = new Random();
+                coin.Left = rand.Next(150, 560);
+            }
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -122,7 +140,9 @@ namespace RacingGame
             loose = false;
             player.Left = 363;
             btmclose.Visible = false;
-
+            countCoins = 0;
+            labelCoins.Text = "Coins: 0";
+            coin.Top = -500;
 
         }
     }
